@@ -25,8 +25,10 @@
         <ul>
             <?php foreach($movies as $movie) { ?>
             <li style="list-style:none;">
-                <img style="width: 300px ;"  src="<?php echo $movie->image; ?>" alt="">
-                <h3><?php echo $movie->title; ?></h3>
+                <img style="width: 300px ;" src="<?php echo $movie->image; ?>" alt="">
+                <?php if($movie->soldout){ ?> 
+                    <h3>titolo: <?php echo $movie->soldout; ?></h3>
+                    <?php } ?>
                 <small> Author:<?php echo $movie->author; ?></small>
                 <p>Genre:<?php echo $movie->genre; ?></p>
                 <small>Year:<?php echo $movie->year; ?></small>
