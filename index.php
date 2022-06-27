@@ -2,11 +2,10 @@
     require_once  __DIR__ .'/classes/movie.php';
 
     $movies = [
-        new Movie('Fast And Furios', 'Gary Scott ThoMpson', 'avventura', 2001),
-        new Movie('Il padrino', 'Francis Ford Coppola', 'crime', 1972),
-        new Movie('Inception', 'Christopher Nolan', 'avventura', 2010) ,
-        new Movie('Inception', 'Christopher Nolan', 'avventura', 2010),
-        new Movie('Jurassic World ', 'Colin Trevorrow', 'avventura', 2022),
+        new Movie('Fast And Furios', 'Gary Scott ThoMpson', 'avventura', 2001,'https://cdn.pocket-lint.com/r/s/1200x630/assets/images/148310-tv-feature-what-order-should-you-watch-the-fast-and-furious-films-in-image1-rzgajwfo2x.jpg'),
+        new Movie('Il padrino', 'Francis Ford Coppola', 'crime', 1972, 'https://www.2duerighe.com/wp-content/uploads/2022/03/THE-GODFATHER-ANNIVERSARY.jpg'),
+        new Movie('Inception', 'Christopher Nolan', 'avventura', 2010, 'https://mr.comingsoon.it/imgdb/locandine/big/47397.jpg') ,
+        new Movie('Jurassic World ', 'Colin Trevorrow', 'avventura', 2022, 'https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_JurassicWorldEvolution2_FrontierDevelopments_S6_1200x1600-56055d1e93c502852ccc0f9578094e5d'),
     ];
 ?>
 
@@ -26,10 +25,11 @@
         <ul>
             <?php foreach($movies as $movie) { ?>
             <li style="list-style:none;">
+                <img style="width: 300px ;"  src="<?php echo $movie->image; ?>" alt="">
                 <h3><?php echo $movie->title; ?></h3>
-                <small><?php echo $movie->author; ?></small>
-                <p><?php echo $movie->genre; ?></p>
-                <small><?php echo $movie->year; ?></small>
+                <small> Author:<?php echo $movie->author; ?></small>
+                <p>Genre:<?php echo $movie->genre; ?></p>
+                <small>Year:<?php echo $movie->year; ?></small>
             </li>
             <?php } ?>
         </ul>
